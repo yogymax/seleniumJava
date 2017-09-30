@@ -22,11 +22,11 @@ public class AppConstants {
 		Manual("Manual Tester"),
 		Automation("Automation Tester");
 		   
-		   private String value;
+		   public String value;
 		   Experties(String p) {
 		      value = p;
 		   }
-		   String getValue() {
+		   public String getValue() {
 		      return value;
 		   } 
 		}
@@ -36,13 +36,13 @@ public class AppConstants {
 		Webdriver("Selenium Webdriver"),
 		IDE("Selenium IDE");
 		
-		private String value;
+		public String value;
 		
 		AutomationTools(String v){
 			value=v;
 		}
 		
-		String getValue(){
+		public String getValue(){
 			return value;
 		}
 		

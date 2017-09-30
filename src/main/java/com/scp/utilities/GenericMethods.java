@@ -1,5 +1,7 @@
 package com.scp.utilities;
 
+import java.awt.AWTException;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,9 +22,10 @@ public class GenericMethods {
 	 *  based on user choice
 	 * @param browser
 	 * @return
+	 * @throws AWTException 
+	 * @throws InterruptedException 
 	 */
-	public static WebDriver initilizeWebDriver(AppConstants.BrowserTypes browser) {
-		WebDriver driver = null;
+	public static WebDriver initilizeWebDriver(AppConstants.BrowserTypes browser) throws AWTException, InterruptedException {
 		switch (browser) {
 		case Firefox:
 			driver = new FirefoxDriver();
@@ -44,6 +47,7 @@ public class GenericMethods {
 		}
 
 		driver.manage().window().maximize();
+		
 		driver.get(AppConstants.APPLICATION_URL);
 		return driver;
 

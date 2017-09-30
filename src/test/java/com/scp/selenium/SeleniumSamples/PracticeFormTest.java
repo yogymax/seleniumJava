@@ -4,6 +4,8 @@ package com.scp.selenium.SeleniumSamples;
  * Install git 
  * 
  */
+import java.awt.AWTException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
@@ -18,7 +20,7 @@ public class PracticeFormTest {
 
 	
 	@Test
-	public void fillPracticeForm() throws InterruptedException {
+	public void fillPracticeForm() throws InterruptedException, AWTException {
 		WebDriver driver = GenericMethods.initilizeWebDriver(BrowserTypes.Firefox);
 		PracticeForm form = PageFactory.initElements(driver,PracticeForm.class);
 		form.enterNames("Yogesh","Chame");

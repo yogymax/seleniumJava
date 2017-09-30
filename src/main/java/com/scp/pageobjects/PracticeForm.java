@@ -59,19 +59,20 @@ public class PracticeForm {
 
 	public void selectGender(AppConstants.GenderTypes gender){
 		for(WebElement gen : genderTypes){
-			if(gen.getText().equalsIgnoreCase(gender.toString())){
+			if(gen.getAttribute("value").equalsIgnoreCase(gender.toString())){
 				gen.click();
 				break;
 			}
 		}
 	
 		GenericMethods.scrollPage(scollDirection.DOWN);
+		GenericMethods.scrollPage(scollDirection.DOWN);
 	}
 
 	public void selectYearOfExp(int p_exp){
 		boolean flag = false;
 		for(WebElement exp : experience){
-			if(exp.getText().equalsIgnoreCase(Integer.toString(p_exp))){
+			if(exp.getAttribute("value").trim().equalsIgnoreCase(Integer.toString(p_exp))){
 				exp.click();
 				flag=true;
 				break;
@@ -91,7 +92,7 @@ public class PracticeForm {
 	public void selectProfession(AppConstants.Experties ...prof){
 		for (int i = 0; i < prof.length; i++) {
 			for(WebElement p : profession){
-				if(p.getText().trim().equalsIgnoreCase(prof.toString())){
+				if(p.getAttribute("value").trim().equalsIgnoreCase(prof[i].getValue())){
 					p.click();
 					break;
 				}
@@ -104,7 +105,7 @@ public class PracticeForm {
 	public void selectAutomationTool(AppConstants.AutomationTools ...tool){
 		for (int i = 0; i < tool.length; i++) {
 			for(WebElement p : automationTool){
-				if(p.getText().trim().equalsIgnoreCase(tool.toString())){
+				if(p.getAttribute("value").trim().equalsIgnoreCase(tool[i].getValue())){
 					p.click();
 					break;
 				}
@@ -116,14 +117,14 @@ public class PracticeForm {
 	
 	public void selectContinents(String countries){
 		Select select = new Select(countryNames);
-		select.selectByValue(countries);
+		select.selectByVisibleText(countries);
 	}
 	
 	
 	public void selectSeleniumCommands(String ...seleniumCmds){
 		Select select = new Select(seleniumCommands);
 		for (String cmd : seleniumCmds) {
-			select.selectByValue(cmd);
+			select.selectByVisibleText(cmd);
 		}
 		
 	}
