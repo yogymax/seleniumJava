@@ -23,7 +23,7 @@ public class PracticeFormTest {
 	public void fillPracticeForm() throws InterruptedException, AWTException {
 		WebDriver driver = GenericMethods.initilizeWebDriver(BrowserTypes.Firefox);
 		PracticeForm form = PageFactory.initElements(driver,PracticeForm.class);
-		form.enterNames("Yogesh","Chame");
+		form.enterNames("FirstName","LastName");
 		Thread.sleep(2000);
 		form.selectGender(GenderTypes.Male);
 		Thread.sleep(2000);

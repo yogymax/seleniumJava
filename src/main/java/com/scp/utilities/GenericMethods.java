@@ -6,7 +6,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import com.scp.selenium.constants.AppConstants;
 
@@ -28,10 +30,16 @@ public class GenericMethods {
 	public static WebDriver initilizeWebDriver(AppConstants.BrowserTypes browser) throws AWTException, InterruptedException {
 		switch (browser) {
 		case Firefox:
+			DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+			FirefoxOptions options = new FirefoxOptions();
+			options.addPreference("log", "{level: trace}");
+			capabilities.setCapability("marionette", true);
+			capabilities.setCapability("moz:firefoxOptions", options);
+			System.setProperty("webdriver.gecko.driver","E:\\MySofts\\geckodriver-v0.19.0-win64\\geckodriver.exe");
 			driver = new FirefoxDriver();
 			break;
 		case Chrome:
-			System.setProperty("", "");
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Yogesh\\Downloads\\chromedriver_win32\\chromedriver.exe");
 			driver = new ChromeDriver();
 			break;
 		case IE:
