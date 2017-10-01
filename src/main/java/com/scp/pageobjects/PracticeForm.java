@@ -2,7 +2,7 @@ package com.scp.pageobjects;
 
 import java.util.List;
 
-
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
@@ -18,6 +18,8 @@ import com.scp.utilities.GenericMethods;
  *
  */
 public class PracticeForm {
+	
+	public static Logger log = Logger.getLogger(PracticeForm.class);
 	
 	@FindBy(name="firstname")
 	WebElement firstnameInput;
@@ -51,17 +53,24 @@ public class PracticeForm {
 	
 	
 	public void enterNames(String fName,String lName){
+		log.info("FirstName : " +fName);
+		log.info("LastName : " +lName);
+		
 		this.firstnameInput.clear();
 		this.lastnameInput.clear();
 		
 		this.firstnameInput.sendKeys(fName);
 		this.lastnameInput.sendKeys(lName);
+		
+		log.info("enterNames method execution completed...!");
 	}
 
 	public void selectGender(AppConstants.GenderTypes gender){
+		log.info("Gender To be selected : " +gender);
 		for(WebElement gen : genderTypes){
 			if(gen.getAttribute("value").equalsIgnoreCase(gender.toString())){
 				gen.click();
+				log.info("Selected value" +gen.getAttribute("value"));
 				break;
 			}
 		}

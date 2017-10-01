@@ -21,7 +21,7 @@ public class PracticeFormTest {
 	
 	@Test
 	public void fillPracticeForm() throws InterruptedException, AWTException {
-		WebDriver driver = GenericMethods.initilizeWebDriver(BrowserTypes.Firefox);
+		WebDriver driver = GenericMethods.initilizeWebDriver(BrowserTypes.Chrome);
 		PracticeForm form = PageFactory.initElements(driver,PracticeForm.class);
 		form.enterNames("FirstName","LastName");
 		Thread.sleep(2000);

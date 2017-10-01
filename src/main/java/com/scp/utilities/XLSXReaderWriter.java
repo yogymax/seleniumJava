@@ -23,7 +23,10 @@ public class XLSXReaderWriter {
 	File excel = new File(filePath); 
 	//File excel = new File("../seleniumReadExcel.xlsx");
 	FileInputStream fis = new FileInputStream(excel);
-	XSSFWorkbook book = new XSSFWorkbook(fis);
+	
+	//HssFworkbook // POI // <=2007
+
+	XSSFWorkbook book = new XSSFWorkbook(fis);//poi-ooxml//>=2007
 	XSSFSheet sheet = book.getSheetAt(0);
 	//Read Excel File 
 	readExcelFile(sheet);
