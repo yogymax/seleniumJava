@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <profiles>
+    <profile>
+      <id>jboss-public</id>
+      <repositories>
+        <repository>
+          <id>jboss-public-repository</id>
+          <name>JBoss Public Maven Repository Group</name>
+          <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+        </repository>
+		<repository>
+          <id>other-repository</id>
+          <name>OtherRepository Group</name>
+          <url>https://mvnrepository.com/artifact/io.netty/netty</url>
+        </repository>
+		
+		<repository>
+          <id>POI JARS</id>
+          <name>poi Group</name>
+          <url>https://mvnrepository.com/artifact/org.apache.poi/poi</url>
+        </repository>
+		
+		<repository>
+          <id>Mysql JARS</id>
+          <name>Mysql Connector</name>
+          <url>https://mvnrepository.com/artifact/mysql/mysql</url>
+        </repository>
+		
+		<repository>
+          <id>Selenium JARS</id>
+          <name>Selenium Jar</name>
+          <url>https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java</url>
+        </repository>
+		
+		<repository>
+          <id>Spring Jar</id>
+          <name>Spring Jar</name>
+          <url>https://mvnrepository.com/artifact/org.springframework/spring-core</url>
+        </repository>		
+
+<repository>
+          <id>Spring bean</id>
+          <name>Springbean jar </name>
+<url>https://mvnrepository.com/artifact/org.springframework.beans</url>
+</repository>
+
+		<repository>
+          <id>MySql</id>
+          <name>MySql Connector Jars</name>
+          <url>https://mvnrepository.com/artifact/mysql/mysql-connector-java</url>
+        </repository>
+		
+		<repository>
+          <id>SeleniumAPI Testing</id>
+          <name>SeleniumAPI Testing Jar</name>
+          <url>https://mvnrepository.com/artifact/org.jbundle.util.osgi.wrapped/org.jbundle.util.osgi.wrapped.org.apache.http.client</url>
+        </repository>
+
+<!-- https://mvnrepository.com/artifact/org.springframework/org.springframework.transaction -->
+<!-- <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>org.springframework.transaction</artifactId>
+    <version>3.0.6.RELEASE</version>
+</dependency> -->
+
+<repository>
+          <id>org.springframework.transaction</id>
+          <name>transaction Jar</name>
+	  <url>https://mvnrepository.com/artifact/org.springframework/org.springframework.transaction</url>	
+</repository>
+
+
+		<repository>
+          <id>JSON Lib</id>
+          <name>JSON Jar</name>
+          <url>https://mvnrepository.com/artifact/net.sf.json-lib/json-lib</url>
+        </repository>
+		
+		<repository>
+          <id>hibernatejars</id>
+          <name>hibernate Jar</name>
+          <url>https://mvnrepository.com/artifact/org.hibernate/hibernate-core</url>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
+
+  <activeProfiles>
+    <activeProfile>jboss-public</activeProfile>
+ </activeProfiles>
+ <servers>
+ <server>
+      <id>TomcatServer</id>
+      <username>tomcat</username>
+      <password>tomcat</password>
+    </server>
+
+ </servers>
+ </settings>
